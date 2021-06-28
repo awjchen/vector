@@ -45,6 +45,7 @@ import Data.Functor.Compose
 
 import Data.Word ( Word8, Word16, Word32, Word64 )
 import Data.Int  ( Int8, Int16, Int32, Int64 )
+import Data.Kind (Type)
 import Data.Complex
 import Data.Monoid (Dual(..),Sum(..),Product(..),All(..),Any(..))
 import Data.Monoid (Alt(..))
@@ -335,7 +336,7 @@ idU = id
 -- instance VU.Unbox a => VU.Unbox (Bar a)
 -- :}
 --
-newtype As a b = As a
+newtype As a (b :: Type) = As a
 
 newtype instance MVector s (As a b) = MV_UnboxAs (MVector s b)
 newtype instance Vector    (As a b) = V_UnboxAs  (Vector b)

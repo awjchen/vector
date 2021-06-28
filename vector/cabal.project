@@ -1,0 +1,21 @@
+-- TODO: Remove this file when the migration is complete
+
+packages: .
+
+package vector
+  -- dependencies (doctest) not yet migrated
+  tests: False
+  -- dependencies not yet migrated
+  benchmarks: False
+
+-- TODO: Remove the below vendored packages when they have migrated to GHC 9.2
+
+source-repository-package
+  type: git
+  location: https://github.com/haskell/primitive
+  tag: 1704f59d91ef964f83c120af4974251d50c2eb68
+
+source-repository-package
+  type: git
+  location: https://github.com/nomeata/inspection-testing
+  tag: 0ddea925324724a1483e5937194637f3e86ccff4
